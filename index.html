@@ -24,7 +24,7 @@
       maxZoom: 5,
     }).addTo(map);
 
-    //map.setView( [-130.25, 123.8], 1);
+    map.setView( [-24.246965, 6.767578], 1);
     //Boundaries Variables
     var mapSW = [-68.592487, -168.046875], mapNE = [68.138852, 167.871094];
     map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
@@ -806,9 +806,10 @@
     var td_emon = L.marker([-9.145486, -110.830078], { icon: cityCapital }).bindPopup('<a href=""><b>Emon</b></a><br>');
     var wm_rexxentrum = L.marker([19.062118, 42.670898], { icon: cityCapital }).bindPopup('<a href=""><b>Rexxentrum</b></a><br>A Dwendaliai Birodalom fővárosa');    
     var wm_sepesca = L.marker([1.230374, -19.379883], { icon: poiRuin }).bindPopup('<a href=""><b>Sepesca</b></a><br>');
+	var wm_damali = L.marker([-24.246965, 6.767578], { icon: cityPort }).bindPopup('<a href="LINK"><b>Port Damali</b></a><br>LEÍRÁS')
 
     //Marker Groups
-    var mg_varosok = L.layerGroup([td_emon, wm_rexxentrum]);
+    var mg_varosok = L.layerGroup([td_emon, wm_rexxentrum, wm_damali]);
     var mg_romok = L.layerGroup([wm_sepesca]);
     var mg_telepulesek = L.layerGroup([o_darktow]);
     //Marker Overlay
