@@ -11,9 +11,9 @@
   <script src="assets/js/L.Control.BetterScale.js"></script>
 </head>
 
-<body class="is-preload" style="height: 100%;margin: 0;">
+<body style="height: 100%;margin: 0;">
 
-  <div id="map" style="width: 100%; height: 100%; background: #d9cdb6;"></div>
+  <div id="map" style="width: 100%; height: 100%; background: #c6a17e;"></div>
   <script type="text/javascript">
     //Creating the Map
     var map = L.map('map').setView([0, 0], 0);
@@ -25,19 +25,19 @@
     }).addTo(map);
 
     //Boundaries Variables
-    var mapSW = [-68.592487, -168.046875], mapNE = [68.138852, 167.871094];
+    var mapSW = [-68.592487, -134.648438], mapNE = [68.528235, 134.648438];
     map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
 
-	map.setView( [-24.246965, 6.767578], 1);
+	//map.setView([5.266008, 3.339844], 1);
 
     //Coordinate Finder
-    /*var marker = L.marker([0, 0], {
+    var marker = L.marker([0, 0], {
       draggable: true,
     }).addTo(map);
     marker.bindPopup('LatLng Marker').openPopup();
     marker.on('dragend', function (e) {
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
-    });*/
+    });
 	
     //ICONS
     var city = L.icon({
@@ -799,26 +799,54 @@
 		tooltipAnchor: [16, -28],
 		shadowSize:  [41, 41]
 	}); 	
+	var mountain = L.icon({
+		iconUrl:       'icons/mountain.png',
+		iconRetinaUrl: 'icons/mountain.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
 
     //Markers    
     
     //var UNIQUE ID = L.marker([X VALUE, Y VALUE], { icon: townDock }).bindPopup('<a href="LINK"><b>NÉV</b></a><br>LEÍRÁS')
 
-    var o_darktow = L.marker([-52.214339, -32.695313], { icon: townDock }).bindPopup('<a href=""><b>Darktow</b></a><br>Kalóz menedék');
-    var td_emon = L.marker([-9.145486, -110.830078], { icon: cityCapital }).bindPopup('<a href=""><b>Emon</b></a><br>');
-    var wm_rexxentrum = L.marker([19.062118, 42.670898], { icon: cityCapital }).bindPopup('<a href=""><b>Rexxentrum</b></a><br>A Dwendaliai Birodalom fővárosa');    
-    var wm_sepesca = L.marker([1.230374, -19.379883], { icon: poiRuin }).bindPopup('<a href=""><b>Sepesca</b></a><br>');
-	var wm_damali = L.marker([-24.246965, 6.767578], { icon: cityPort }).bindPopup('<a href="LINK"><b>Port Damali</b></a><br>LEÍRÁS')
+    var o_darktow = L.marker([-29.764377, -8.393555], { icon: townDock }).bindPopup('<a href=""><b>Darktow</b></a><br>Kalóz menedék');
+    var td_emon = L.marker([2.591889, -74.750977], { icon: cityCapital }).bindPopup('<a href=""><b>Emon</b></a><br>');
+    var wm_rexxentrum = L.marker([23.443089, 45.527344], { icon: cityCapital }).bindPopup('<a href=""><b>Rexxentrum</b></a><br>A Dwendaliai Birodalom fővárosa');    
+    //var wm_sepesca = L.marker([14.093957, 0.263672], { icon: poiRuin }).bindPopup('<a href=""><b>Sepesca</b></a><br>');
+	var wm_damali = L.marker([-5.484768, 19.6875], { icon: cityCapital }).bindPopup('<a href="LINK"><b>Port Damali</b></a><br>LEÍRÁS')
+	var td_syngorn = L.marker([-16.972741, -55.810547], { icon: cityElves }).bindPopup('<a href=""><b>Syngorn</b></a><br>');
+	var td_kraghammer = L.marker([15.961329, -61.12793], { icon: cityDwarves }).bindPopup('<a href=""><b>Kraghammer</b></a><br>');
+	var td_westruun = L.marker([5.397273, -41.484375], { icon: town }).bindPopup('<a href=""><b>Westruun</b></a><br>');
+	var td_whitestone = L.marker([23.483401, -28.652344], { icon: town }).bindPopup('<a href=""><b>Whitestone</b></a><br>');
+	var wm_asarius = L.marker([7.275292, 73.388672], { icon: cityBarbarian }).bindPopup('<a href=""><b>Asarius</b></a><br>');
+	var wm_rosohna = L.marker([5.703448, 88.681641], { icon: cityCapital }).bindPopup('<a href=""><b>Rosohna</b></a><br>');
+	var wm_zadash = L.marker([7.057282, 47.285156], { icon: city }).bindPopup('<a href=""><b>Zadash</b></a><br>');
+	var wm_uthodurn = L.marker([42.811522, 67.631836], { icon: cityDwarves }).bindPopup('<a href=""><b>Uthodurn</b></a><br>');
+	var wm_nicodranas = L.marker([-19.269665, 41.220703], { icon: cityPort }).bindPopup('<a href=""><b>Nicodranas</b></a><br>');
+	var h_cyrios = L.marker([0.659165, 33.398438], { icon: mountain }).bindPopup('<b>Cyrios-Hegység</b><br>');
+	var h_cyrios2 = L.marker([18.229351, 12.392578], { icon: mountain }).bindPopup('<b>Cyrios-Hegység</b><br>');
+	var h_hamu = L.marker([0.439449, 64.160156], { icon: mountain }).bindPopup('<b>Hamuőr-Hegyek</b><br>');
+	var h_hamu2 = L.marker([-16.636192, 54.228516], { icon: mountain }).bindPopup('<b>Hamuőr-Hegyek</b><br>');
+
+	
 
     //Marker Groups
-    var mg_varosok = L.layerGroup([td_emon, wm_rexxentrum, wm_damali]);
-    var mg_romok = L.layerGroup([wm_sepesca]);
-    var mg_telepulesek = L.layerGroup([o_darktow]);
+    var mg_varosok = L.layerGroup([td_emon, wm_rexxentrum, wm_damali, td_kraghammer, td_syngorn, wm_rosohna, wm_zadash, wm_uthodurn, wm_asarius, wm_nicodranas]);
+    var mg_erdekes = L.layerGroup([]);
+    var mg_telepulesek = L.layerGroup([o_darktow, td_westruun, td_whitestone]);
+	var mg_terep = L.layerGroup([h_cyrios, h_cyrios2, h_hamu, h_hamu2]);
+
     //Marker Overlay
     var overlays = {
-      "Városok": mg_varosok,
-      "Romok": mg_romok,
+      "Városok": mg_varosok,      
       "Települések": mg_telepulesek,
+	  "Érdekességek": mg_erdekes,
+	  "Terep": mg_terep,
     }
 
     //GROUP CONTROLS
@@ -827,17 +855,6 @@
     //L.control.scale({metric: true, maxWidth: 250}).addTo(map);
 
   </script>
-
-
-  <!-- BG -->
-  <div id="bg"></div>
-
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
 
 
 </body>
