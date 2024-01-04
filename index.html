@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/css/leaflet.css">
   <script src="assets/js/leaflet.js"></script>
   <link rel="stylesheet" href="assets/css/L.Control.BetterScale.css" />
-	<script src="assets/js/L.Control.BetterScale.js"></script>
+  <script src="assets/js/L.Control.BetterScale.js"></script>
 </head>
 
 <body class="is-preload" style="height: 100%;margin: 0;">
@@ -20,14 +20,14 @@
     L.tileLayer('map/{z}/{x}/{y}.png', {
       continuousWorld: false,
       noWrap: true,
-      minZoom: 3,
+      minZoom: 2,
       maxZoom: 5,
     }).addTo(map);
 
     //map.setView( [-130.25, 123.8], 1);
-  //Boundaries Variables
-    //var mapSW = [-210,255], mapNE = [-55,10];
-	//map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));	
+    //Boundaries Variables
+    var mapSW = [-68.592487, -168.046875], mapNE = [68.138852, 167.871094];
+    map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
 
     //Coordinate Finder
     var marker = L.marker([0, 0], {
@@ -38,7 +38,7 @@
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
     });
     //ICONS
-    var varos = L.icon({
+    var city = L.icon({
 		iconUrl:       'icons/city.png',
 		iconRetinaUrl: 'icons/city.png',
 		shadowUrl:     'icons/shadow.png',
@@ -48,7 +48,147 @@
 		tooltipAnchor: [16, -28],
 		shadowSize:  [41, 41]
 	});
-  var rom = L.icon({
+	var cityBarbarian = L.icon({
+		iconUrl:       'icons/cityBarbarian.png',
+		iconRetinaUrl: 'icons/cityBarbarian.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var cityCapital = L.icon({
+		iconUrl:       'icons/cityCapital.png',
+		iconRetinaUrl: 'icons/cityCapital.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityDruid = L.icon({
+		iconUrl:       'icons/cityDruid.png',
+		iconRetinaUrl: 'icons/cityDruid.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var cityDwarves = L.icon({
+		iconUrl:       'icons/cityDwarves.png',
+		iconRetinaUrl: 'icons/cityDwarves.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityElves = L.icon({
+		iconUrl:       'icons/cityElves.png',
+		iconRetinaUrl: 'icons/cityElves.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var cityHalflings = L.icon({
+		iconUrl:       'icons/cityHalflings.png',
+		iconRetinaUrl: 'icons/cityHalflings.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityLizard = L.icon({
+		iconUrl:       'icons/cityLizard.png',
+		iconRetinaUrl: 'icons/cityLizard.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityPort = L.icon({
+		iconUrl:       'icons/cityPort.png',
+		iconRetinaUrl: 'icons/cityPort.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var fort = L.icon({
+		iconUrl:       'icons/fort.png',
+		iconRetinaUrl: 'icons/fort.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var fortTower = L.icon({
+		iconUrl:       'icons/fortTower.png',
+		iconRetinaUrl: 'icons/fortTower.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var mageTower = L.icon({
+		iconUrl:       'icons/mageTower.png',
+		iconRetinaUrl: 'icons/mageTower.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var poiBramble = L.icon({
+		iconUrl:       'icons/poiBramble.png',
+		iconRetinaUrl: 'icons/poiBramble.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var poiCave = L.icon({
+		iconUrl:       'icons/poiCave.png',
+		iconRetinaUrl: 'icons/poiCave.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var poiMine = L.icon({
+		iconUrl:       'icons/poiMine.png',
+		iconRetinaUrl: 'icons/poiMine.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var poiRuin = L.icon({
 		iconUrl:       'icons/poiRuin.png',
 		iconRetinaUrl: 'icons/poiRuin.png',
 		shadowUrl:     'icons/shadow.png',
@@ -57,26 +197,632 @@
 		popupAnchor: [1, -34],
 		tooltipAnchor: [16, -28],
 		shadowSize:  [41, 41]
+	}); 
+	var poiWaterfall = L.icon({
+		iconUrl:       'icons/poiWaterfall.png',
+		iconRetinaUrl: 'icons/poiWaterfall.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
 	});
+	var templeCathedral = L.icon({
+		iconUrl:       'icons/templeCathedral.png',
+		iconRetinaUrl: 'icons/templeCathedral.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var templeEldath = L.icon({
+		iconUrl:       'icons/templeEldath.png',
+		iconRetinaUrl: 'icons/templeEldath.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var templeMonolith = L.icon({
+		iconUrl:       'icons/templeMonolith.png',
+		iconRetinaUrl: 'icons/templeMonolith.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var templePyramid = L.icon({
+		iconUrl:       'icons/templePyramid.png',
+		iconRetinaUrl: 'icons/templePyramid.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var templeShrine = L.icon({
+		iconUrl:       'icons/templeShrine.png',
+		iconRetinaUrl: 'icons/templeShrine.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var templeZiggurat = L.icon({
+		iconUrl:       'icons/templeZiggurat.png',
+		iconRetinaUrl: 'icons/templeZiggurat.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var town = L.icon({
+		iconUrl:       'icons/town.png',
+		iconRetinaUrl: 'icons/town.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var townBarbarian = L.icon({
+		iconUrl:       'icons/townBarbarian.png',
+		iconRetinaUrl: 'icons/townBarbarian.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var townDock = L.icon({
+		iconUrl:       'icons/townDock.png',
+		iconRetinaUrl: 'icons/townDock.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var townDruid = L.icon({
+		iconUrl:       'icons/townDruid.png',
+		iconRetinaUrl: 'icons/townDruid.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var townDwarves = L.icon({
+		iconUrl:       'icons/townDwarves.png',
+		iconRetinaUrl: 'icons/townDwarves.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var townElves = L.icon({
+		iconUrl:       'icons/townElves.png',
+		iconRetinaUrl: 'icons/townElves.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var townHalflings = L.icon({
+		iconUrl:       'icons/townHalflings.png',
+		iconRetinaUrl: 'icons/townHalflings.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var townLizard = L.icon({
+		iconUrl:       'icons/townLizard.png',
+		iconRetinaUrl: 'icons/townLizard.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var townMill = L.icon({
+		iconUrl:       'icons/townMill.png',
+		iconRetinaUrl: 'icons/townMill.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var tradeCamp = L.icon({
+		iconUrl:       'icons/tradeCamp.png',
+		iconRetinaUrl: 'icons/tradeCamp.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var tradeCampLarge = L.icon({
+		iconUrl:       'icons/tradeCampLarge.png',
+		iconRetinaUrl: 'icons/tradeCampLarge.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var tradeForge = L.icon({
+		iconUrl:       'icons/tradeForge.png',
+		iconRetinaUrl: 'icons/tradeForge.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var tradeHunter = L.icon({
+		iconUrl:       'icons/tradeHunter.png',
+		iconRetinaUrl: 'icons/tradeHunter.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var tradeStable = L.icon({
+		iconUrl:       'icons/tradeStable.png',
+		iconRetinaUrl: 'icons/tradeStable.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var tradeWatchtower = L.icon({
+		iconUrl:       'icons/tradeWatchtower.png',
+		iconRetinaUrl: 'icons/tradeWatchtower.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 	var city = L.icon({
+		iconUrl:       'icons/city.png',
+		iconRetinaUrl: 'icons/city.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityBarbarian = L.icon({
+		iconUrl:       'icons/cityBarbarian.png',
+		iconRetinaUrl: 'icons/cityBarbarian.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var cityCapital = L.icon({
+		iconUrl:       'icons/cityCapital.png',
+		iconRetinaUrl: 'icons/cityCapital.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityDruid = L.icon({
+		iconUrl:       'icons/cityDruid.png',
+		iconRetinaUrl: 'icons/cityDruid.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var cityDwarves = L.icon({
+		iconUrl:       'icons/cityDwarves.png',
+		iconRetinaUrl: 'icons/cityDwarves.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityElves = L.icon({
+		iconUrl:       'icons/cityElves.png',
+		iconRetinaUrl: 'icons/cityElves.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var cityHalflings = L.icon({
+		iconUrl:       'icons/cityHalflings.png',
+		iconRetinaUrl: 'icons/cityHalflings.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityLizard = L.icon({
+		iconUrl:       'icons/cityLizard.png',
+		iconRetinaUrl: 'icons/cityLizard.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var cityPort = L.icon({
+		iconUrl:       'icons/cityPort.png',
+		iconRetinaUrl: 'icons/cityPort.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var fort = L.icon({
+		iconUrl:       'icons/fort.png',
+		iconRetinaUrl: 'icons/fort.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var fortTower = L.icon({
+		iconUrl:       'icons/fortTower.png',
+		iconRetinaUrl: 'icons/fortTower.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var mageTower = L.icon({
+		iconUrl:       'icons/mageTower.png',
+		iconRetinaUrl: 'icons/mageTower.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var poiBramble = L.icon({
+		iconUrl:       'icons/poiBramble.png',
+		iconRetinaUrl: 'icons/poiBramble.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var poiCave = L.icon({
+		iconUrl:       'icons/poiCave.png',
+		iconRetinaUrl: 'icons/poiCave.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var poiMine = L.icon({
+		iconUrl:       'icons/poiMine.png',
+		iconRetinaUrl: 'icons/poiMine.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var poiRuin = L.icon({
+		iconUrl:       'icons/poiRuin.png',
+		iconRetinaUrl: 'icons/poiRuin.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var poiWaterfall = L.icon({
+		iconUrl:       'icons/poiWaterfall.png',
+		iconRetinaUrl: 'icons/poiWaterfall.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var templeCathedral = L.icon({
+		iconUrl:       'icons/templeCathedral.png',
+		iconRetinaUrl: 'icons/templeCathedral.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var templeEldath = L.icon({
+		iconUrl:       'icons/templeEldath.png',
+		iconRetinaUrl: 'icons/templeEldath.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var templeMonolith = L.icon({
+		iconUrl:       'icons/templeMonolith.png',
+		iconRetinaUrl: 'icons/templeMonolith.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var templePyramid = L.icon({
+		iconUrl:       'icons/templePyramid.png',
+		iconRetinaUrl: 'icons/templePyramid.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var templeShrine = L.icon({
+		iconUrl:       'icons/templeShrine.png',
+		iconRetinaUrl: 'icons/templeShrine.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var templeZiggurat = L.icon({
+		iconUrl:       'icons/templeZiggurat.png',
+		iconRetinaUrl: 'icons/templeZiggurat.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var town = L.icon({
+		iconUrl:       'icons/town.png',
+		iconRetinaUrl: 'icons/town.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var townBarbarian = L.icon({
+		iconUrl:       'icons/townBarbarian.png',
+		iconRetinaUrl: 'icons/townBarbarian.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var townDock = L.icon({
+		iconUrl:       'icons/townDock.png',
+		iconRetinaUrl: 'icons/townDock.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var townDruid = L.icon({
+		iconUrl:       'icons/townDruid.png',
+		iconRetinaUrl: 'icons/townDruid.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var townDwarves = L.icon({
+		iconUrl:       'icons/townDwarves.png',
+		iconRetinaUrl: 'icons/townDwarves.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var townElves = L.icon({
+		iconUrl:       'icons/townElves.png',
+		iconRetinaUrl: 'icons/townElves.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var townHalflings = L.icon({
+		iconUrl:       'icons/townHalflings.png',
+		iconRetinaUrl: 'icons/townHalflings.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var townLizard = L.icon({
+		iconUrl:       'icons/townLizard.png',
+		iconRetinaUrl: 'icons/townLizard.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var townMill = L.icon({
+		iconUrl:       'icons/townMill.png',
+		iconRetinaUrl: 'icons/townMill.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var tradeCamp = L.icon({
+		iconUrl:       'icons/tradeCamp.png',
+		iconRetinaUrl: 'icons/tradeCamp.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var tradeCampLarge = L.icon({
+		iconUrl:       'icons/tradeCampLarge.png',
+		iconRetinaUrl: 'icons/tradeCampLarge.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+ 	var tradeForge = L.icon({
+		iconUrl:       'icons/tradeForge.png',
+		iconRetinaUrl: 'icons/tradeForge.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var tradeHunter = L.icon({
+		iconUrl:       'icons/tradeHunter.png',
+		iconRetinaUrl: 'icons/tradeHunter.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 
+	var tradeStable = L.icon({
+		iconUrl:       'icons/tradeStable.png',
+		iconRetinaUrl: 'icons/tradeStable.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	});
+	var tradeWatchtower = L.icon({
+		iconUrl:       'icons/tradeWatchtower.png',
+		iconRetinaUrl: 'icons/tradeWatchtower.png',
+		shadowUrl:     'icons/shadow.png',
+		iconSize:    [25, 41],
+		iconAnchor:  [12, 41],
+		popupAnchor: [1, -34],
+		tooltipAnchor: [16, -28],
+		shadowSize:  [41, 41]
+	}); 	
+
     //Markers    
-    var o_darktow = L.marker([-52.214339, -32.695313], {icon: varos}).bindPopup('<b>Darktow</b>');
-    var td_emon = L.marker([-9.145486, -110.830078], {icon: varos}).bindPopup('<b>Emon</b>');
-    var wm_rexxentrum = L.marker([19.062118, 42.670898], {icon: varos}).bindPopup('<b>Rexxentrum</b>');
-    //var UNIQUE ID = L.marker([X VALUE, Y VALUE]).bindPopup('PLACE NAME').addTo(map)
-    var wm_sepesca = L.marker([1.230374, -19.379883], {icon: rom}).bindPopup('Sepesca');
+    
+    //var UNIQUE ID = L.marker([X VALUE, Y VALUE], { icon: townDock }).bindPopup('<a href="LINK"><b>NÉV</b></a><br>LEÍRÁS')
+
+    var o_darktow = L.marker([-52.214339, -32.695313], { icon: townDock }).bindPopup('<a href=""><b>Darktow</b></a><br>Kalóz menedék');
+    var td_emon = L.marker([-9.145486, -110.830078], { icon: cityCapital }).bindPopup('<a href=""><b>Emon</b></a><br>');
+    var wm_rexxentrum = L.marker([19.062118, 42.670898], { icon: cityCapital }).bindPopup('<a href=""><b>Rexxentrum</b></a><br>A Dwendaliai Birodalom fővárosa');    
+    var wm_sepesca = L.marker([1.230374, -19.379883], { icon: poiRuin }).bindPopup('<a href=""><b>Sepesca</b></a><br>');
+
     //Marker Groups
-    var mg_varosok = L.layerGroup([o_darktow, td_emon, wm_rexxentrum]);
+    var mg_varosok = L.layerGroup([td_emon, wm_rexxentrum]);
     var mg_romok = L.layerGroup([wm_sepesca]);
+    var mg_telepulesek = L.layerGroup([o_darktow]);
     //Marker Overlay
     var overlays = {
       "Városok": mg_varosok,
       "Romok": mg_romok,
+      "Települések": mg_telepulesek,
     }
+
     //GROUP CONTROLS
     L.control.layers(null, overlays).addTo(map);
     //SCALE
     //L.control.scale({metric: true, maxWidth: 250}).addTo(map);
-    
+
   </script>
 
 
