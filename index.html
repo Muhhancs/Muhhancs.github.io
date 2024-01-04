@@ -20,14 +20,15 @@
     L.tileLayer('map/{z}/{x}/{y}.png', {
       continuousWorld: false,
       noWrap: true,
-      minZoom: 3,
+      minZoom: 2,
       maxZoom: 5,
     }).addTo(map);
 
-    map.setView( [-24.246965, 6.767578], 1);
     //Boundaries Variables
     var mapSW = [-68.592487, -168.046875], mapNE = [68.138852, 167.871094];
     map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
+
+	map.setView( [-24.246965, 6.767578], 1);
 
     //Coordinate Finder
     /*var marker = L.marker([0, 0], {
@@ -37,6 +38,7 @@
     marker.on('dragend', function (e) {
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
     });*/
+	
     //ICONS
     var city = L.icon({
 		iconUrl:       'icons/city.png',
